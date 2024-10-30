@@ -91,40 +91,33 @@
         }
         
         .hero {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: var(--white);
-            padding: 8rem 0 6rem;
-            text-align: center;
             position: relative;
+            height: 100vh;
             overflow: hidden;
         }
-        
-        .hero::before {
-            content: '';
+
+        .hero-video {
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: url('https://example.com/calavera-pattern.png');
-            opacity: 0.1;
-            z-index: 1;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
-        
-        .hero .container {
+
+        .hero-content {
             position: relative;
-            z-index: 2;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5);
         }
-        
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto 2rem;
+
+        .hero-content .container {
+            max-width: 800px;
         }
         
         .btn {
@@ -373,15 +366,21 @@
 
     <main>
         <section class="hero">
-            <div class="container">
-                <h1 data-aos="fade-up" data-aos-offset="100" data-aos-once="true">Sonido Profesional para Eventos Inolvidables de Día de Muertos</h1>
-                <p data-aos="fade-up" data-aos-delay="200" data-aos-offset="100" data-aos-once="true">Celebra el Día de Muertos con el mejor sonido. Ofrecemos equipos de alta calidad para todo tipo de eventos. Experiencia, profesionalismo y tecnología de punta a su servicio.</p>
-                <div data-aos="fade-up" data-aos-delay="400" data-aos-offset="100" data-aos-once="true">
-                    <a href="#contacto" class="btn btn-primary">Solicitar Cotización</a>
-                    <a href="#paquetes" class="btn btn-secondary">Ver Paquetes con Descuento</a>
-                </div>
+    <video autoplay loop muted playsinline class="hero-video">
+        <source src="intro.mp4" type="video/mp4">
+        Tu navegador no soporta el elemento de video.
+    </video>
+    <div class="hero-content">
+        <div class="container">
+            <h1 data-aos="fade-up" data-aos-offset="100" data-aos-once="true">Sonido Profesional para Eventos Inolvidables de Día de Muertos</h1>
+            <p data-aos="fade-up" data-aos-delay="200" data-aos-offset="100" data-aos-once="true">Celebra el Día de Muertos con el mejor sonido. Ofrecemos equipos de alta calidad para todo tipo de eventos. Experiencia, profesionalismo y tecnología de punta a su servicio.</p>
+            <div data-aos="fade-up" data-aos-delay="400" data-aos-offset="100" data-aos-once="true">
+                <a href="#contacto" class="btn btn-primary">Solicitar Cotización</a>
+                <a href="#paquetes" class="btn btn-secondary">Ver Paquetes con Descuento</a>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
 
         <section id="servicios">
             <div class="container">
